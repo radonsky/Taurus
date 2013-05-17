@@ -1,0 +1,37 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET      /                    controllers.Application.index
+GET      /groups              controllers.Groups.list(name: Option[String] ?= None, ids: Option[String] ?= None)
+POST     /groups              controllers.Groups.add
+GET      /group/:id           controllers.Groups.get(id: Long)
+DELETE   /group/:id           controllers.Groups.delete(id: Long)
+PUT      /group/:id           controllers.Groups.update(id: Long)
+GET      /group/:id/players   controllers.Players.getAllForGroup(id: Long)
+GET      /group/:id/games     controllers.Games.getAllForGroup(id: Long)
+GET      /players             controllers.Players.list
+POST     /players             controllers.Players.add
+GET      /player/:id          controllers.Players.get(id: Long)
+DELETE   /player/:id          controllers.Players.delete(id: Long)
+PUT      /player/:id          controllers.Players.update(id: Long)
+GET      /games               controllers.Games.list
+POST     /games               controllers.Games.add
+GET      /game/:id            controllers.Games.get(id: Long)
+DELETE   /game/:id            controllers.Games.delete(id: Long)
+PUT      /game/:id            controllers.Games.update(id: Long)
+POST     /game/:id/results    controllers.Games.addResults(id: Long)
+GET      /matches             controllers.Matches.list
+POST     /matches             controllers.Matches.add
+GET      /match/:id           controllers.Matches.get(id: Long)
+DELETE   /match/:id           controllers.Matches.delete(id: Long)
+PUT      /match/:id           controllers.Matches.update(id: Long)
+POST     /match/:id/results   controllers.Matches.addResults(id: Long)
+GET      /group/:id/results   controllers.Groups.getResults(id: Long)
+DELETE   /game/:id/results    controllers.Games.deleteResults(id: Long)
+GET      /game/:id/results    controllers.Games.getResults(id: Long)
+GET      /stats/tables        controllers.Stats.getTables
+
+# Map static resources from the /public folder to the /assets URL path
+GET      /assets/*file        controllers.Assets.at(path="/public", file)
