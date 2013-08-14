@@ -23,7 +23,7 @@ class GroupsSpec extends Specification {
 	"respond to the /groups Action" in {
 	  running(FakeApplication()) {
   
-		  val Some(result) = routeAndCall(FakeRequest(GET, "/groups"))
+		  val Some(result) = route(FakeRequest(GET, "/groups"))
 		  
 		  status(result) must equalTo(OK)
 		  contentType(result) must beSome("application/json")
