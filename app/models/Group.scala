@@ -22,6 +22,7 @@ import anorm.SqlParser._
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 import ModelUtils._
+import scala.language.postfixOps
 
 
 case class Group (

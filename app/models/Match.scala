@@ -22,6 +22,7 @@ import play.api.Play.current
 import play.api.libs.json._
 import play.api.libs.json.util._
 import play.api.libs.functional.syntax._
+import scala.language.postfixOps
 
 case class Match (
     matchId: Pk[Long],
